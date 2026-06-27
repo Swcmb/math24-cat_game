@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+  <title>数学24点</title>
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <div class="brand" onclick="location.hash='#home'">游园活动</div>
+      <nav class="nav-links">
+        <a href="#home">首页</a>
+        <a href="#24">数学24点</a>
+      </nav>
+      <div class="nav-actions">
+        <button id="themeToggle" class="ghost">主题</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="app" class="container app-root">
+    <!-- 路由视图将插入这里 -->
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>© 2025 游园活动</span>
+    </div>
+  </footer>
+
+  <template id="view-home">
+    <section class="hero card">
+      <h1>游园活动</h1>
+      <p>数学24点小游戏。统一风格，响应式设计，支持尝试次数、状态保存与结果记录。</p>
+      <div class="hero-actions">
+        <a class="btn" href="#24">立即开始 · 数学24点</a>
+      </div>
+    </section>
+
+    <section class="grid cards">
+      <article class="card hover">
+        <h3>数学24点</h3>
+        <p>用加减乘除把四个数字组合成 24。</p>
+        <div class="rules">
+          <strong>规则速览</strong>
+          <ol>
+            <li>每轮固定四张牌；3次尝试机会。</li>
+            <li>允许括号与四则运算，结果需等于 24。</li>
+          </ol>
+        </div>
+        <a class="btn" href="#24">进入</a>
+      </article>
+    </section>
+  </template>
+
+
+
+  <template id="view-24">
+    <section class="card">
+      <h2>数学24点</h2>
+      <p class="sub">规则：每轮固定四张牌，3 次尝试；必须用完4张牌；允许中间小数；最终结果四舍五入至6位后等于 24。</p>
+      <div class="inline-rules">
+        <div id="twentyfour-cards" class="cards" style="display:flex;gap:8px;flex-wrap:wrap;margin:8px 0;"></div>
+        <div>剩余尝试：<span id="twentyfour-attempts">-</span></div>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:8px;">
+        <input id="twentyfour-expr" type="text" placeholder="输入表达式，如 (3+3)*4" style="flex:1;min-width:220px;padding:8px;border-radius:10px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.06);color:#fff;">
+        <button id="twentyfour-submit" class="btn">提交</button>
+        <button id="twentyfour-clear" class="btn ghost">清空</button>
+        <button id="twentyfour-back" class="btn ghost">退格</button>
+        <button id="twentyfour-new" class="btn ghost">新一轮</button>
+      </div>
+      <div id="twentyfour-keypad" style="display:grid;gap:8px;margin-top:10px;"></div>
+      <div id="twentyfour-history" style="margin-top:10px;color:#a6b4c6"></div>
+    </section>
+  </template>
+
+
+
+
+
+  <script src="assets/js/router.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/games/24.js"></script>
+</body>
+</html>
